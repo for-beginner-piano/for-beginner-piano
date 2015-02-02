@@ -13,7 +13,10 @@ setup(
     author='David Bain',
     author_email='david@alteroo.com',
     description='Piano. Beginner friendly Plone development.',
-    long_description=__doc__,
+    long_description=(
+        open('README.rst').read() + '\n' +
+        open('CHANGES.rst').read()
+    ),
     packages=find_packages(exclude=['tests']),
     include_package_data=True,
     zip_safe=False,

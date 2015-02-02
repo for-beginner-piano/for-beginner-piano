@@ -71,3 +71,10 @@ Creating a Plone add-on
     piano newaddon myaddon
     
 (coming soon, this command doesn't work yet)
+
+Credits
+--------
+
+piano is created and managed by David Bain, it is built on top of plock which was
+created and maintained by Alex Clark.
+
