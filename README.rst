@@ -19,7 +19,7 @@ To install `piano` quickly, run the following commands::
     source ~/.bashrc
 
 This will use `pipsi` to install the relevant packages in user space.
-It also ensures that piano is using the most up-t-date version of
+It also ensures that piano is using the most up-to-date version of
 setuptools.
 
 Longer Install
@@ -48,8 +48,8 @@ For example, if your project will be called `my-plone-site`::
 
     piano newbuildout my-plone-site
     
-.. note: A buildout is a folder which holds all the settings required to build
-and deploy a Plone site
+.. note:: A buildout is a folder which holds all the settings required to build
+          and deploy a Plone site
 
 You'll see output similar to this::
 
@@ -66,7 +66,7 @@ You'll see output similar to this::
  
 Creating a Plone add-on
 -------------------------
-::
+This is not working yet, but ::
 
     piano newaddon myaddon
     

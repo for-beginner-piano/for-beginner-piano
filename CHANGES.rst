@@ -1,5 +1,16 @@
 Changelog
 =========
+0.2.4 (2015-02-02)
+------------------
+
+- made adjustments to README
+
+0.2.3 (2015-02-02)
+------------------
+
+- added MANIFEST.in
+- added README and CHANGES to long description of setup.py
+
 0.2.2 (2015-02-02)
 ------------------
 
