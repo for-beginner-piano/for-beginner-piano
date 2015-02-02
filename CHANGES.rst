@@ -1,8 +1,19 @@
 Changelog
 =========
 
+0.2.15 (2015-02-02)
+-------------------
+
+- fixed flake8 issues
+
+0.2.14 (2015-02-02)
+-------------------
+
+- looks for unified installer in the ~/.buildout cache first.
+  does not re-download unified installer
+
 0.2.12 (2015-02-02)
-------------------
+-------------------
 
 - made adjustments to README
 

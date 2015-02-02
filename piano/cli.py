@@ -61,7 +61,7 @@ class Piano(object):
 
     def create_extends_cache(self):
         _mkdir(self.extendsdir)
-         
+
     def create_default_cfg(self):
         _mkdir(self.buildoutdir)
         # print "path:",self.buildoutdir
@@ -129,6 +129,9 @@ class PianoInstall(Installer):
 
         if test:
             return
+        # temporarily override self.directory
+        self._directory = self.directory
+        self.directory = "{}/.buildout".format(home)
         path_to_installer = self.download_unifiedinstaller()
         print("Unpacking installer...")
         tar = tarfile.open(path_to_installer)
@@ -155,6 +158,9 @@ class PianoInstall(Installer):
         dst_downloads = "%s/downloads" % self.cachepath
         src_downloads = "%s/downloads" % buildout_cache
         distutils.dir_util.copy_tree(src_downloads, dst_downloads)
+
+        # now that the deed is done reset the self.directory
+        self.directory = self._directory
 
     def install_plone(self, args, test=False):
         """
@@ -198,7 +204,13 @@ class PianoInstall(Installer):
         if args.unified or args.unified_only:
             # don't add a download_cache()
             # self.add_download_cache()
+            # temporarily override self.directory
+            self._directory = self.directory
+            home = os.getenv("HOME")
+            self.directory = "{}/.buildout".format(home)
             self.clean_up(test=test)
+            # set the directoy back
+            self.directory = self._directory
 
         if args.unified_only:
             print("Only downloading installer cache, bye!")

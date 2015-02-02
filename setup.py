@@ -7,7 +7,7 @@ dependencies = ['click','plock','requests','setuptools>=12.0.5']
 
 setup(
     name='for-beginner-piano',
-    version='0.2.13',
+    version='0.2.15',
     url='https://github.com/for-beginner-piano/for-beginner-piano',
     license='BSD',
     author='David Bain',
@@ -44,8 +44,9 @@ setup(
         'Operating System :: MacOS',
         'Operating System :: Unix',
         # 'Operating System :: Windows',
+        'Framework :: Plone :: 4.3',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
         # 'Programming Language :: Python :: 3',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ]
