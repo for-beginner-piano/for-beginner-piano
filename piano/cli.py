@@ -57,7 +57,11 @@ class Piano(object):
         self.__dict__.update(kwargs)
         self.home = os.getenv("HOME")
         self.buildoutdir = os.path.join(self.home, ".buildout")
+        self.extendsdir = os.path.join(self.home, ".buildout", "extends-cache")
 
+    def create_extends_cache(self):
+        _mkdir(self.extendsdir)
+         
     def create_default_cfg(self):
         _mkdir(self.buildoutdir)
         # print "path:",self.buildoutdir
@@ -235,6 +239,7 @@ def newbuildout(name):
 
     cmds = ['getdependencies',
             'create_default_cfg',
+            'create_extends_cache',
             'plockit']
     with progressbar(cmds) as bar:
         for cmd in bar:
