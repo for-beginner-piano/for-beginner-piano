@@ -6,9 +6,9 @@ from setuptools import find_packages, setup
 dependencies = ['click','plock','requests']
 
 setup(
-    name='piano',
+    name='for-beginner-piano',
     version='0.1.0',
-    url='https://github.com/pigeonflgiht/piano',
+    url='https://github.com/for-beginner-piano/for-beginner-piano',
     license='BSD',
     author='David Bain',
     author_email='david@alteroo.com',
