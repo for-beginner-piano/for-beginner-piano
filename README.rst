@@ -1,5 +1,5 @@
 piano
-============
+=======
 
 .. image:: https://travis-ci.org/for-beginner-piano/for-beginner-piano.svg?branch=master
 
@@ -8,12 +8,14 @@ Piano. Beginner friendly Plone development.
 .. warning:: This is very much ALPHA!. In the spirit of release early, here it is.
 
 Installation
-=================
+============
 
 Quick Install
------------------------
+-------------
 
-To install `piano` quickly, run the following commands::
+To install `piano` quickly, run the following commands:
+
+::
 
     wget -qO- goo.gl/NmFSel | bash
     source ~/.bashrc
@@ -23,12 +25,16 @@ It also ensures that piano is using the most up-to-date version of
 setuptools.
 
 Longer Install
--------------------
+---------------
 
 We prefer and recommend `pipsi`. 
+
 (Here are installation instructions for pipsi https://github.com/mitsuhiko/pipsi#readme.)
 
-Once you have pipsi run::
+
+Once you have pipsi run:
+
+::
 
     pipsi install for-beginner-piano
     ~/.local/venvs/for-beginner-piano/bin/pip install -U setuptools
@@ -37,21 +43,25 @@ Once you have pipsi run::
           for this reason we run the second command above.
 
 Usage
-=============
+=====
 
 To create a new Plone buildout project
-------------------------------------------
+--------------------------------------
 
 Use the subcommand `newbuildout` to create a buildout project.
 
-For example, if your project will be called `my-plone-site`::
+For example, if your project will be called `my-plone-site`:
+
+::
 
     piano newbuildout my-plone-site
     
 .. note:: A buildout is a folder which holds all the settings required to build
           and deploy a Plone site
 
-You'll see output similar to this::
+You'll see output similar to this:
+
+::
 
     Creating virtualenv... (my-plone-site)
     Installing Buildout...
@@ -65,8 +75,11 @@ You'll see output similar to this::
 
  
 Creating a Plone add-on
--------------------------
-This is not working yet, but ::
+------------------------
+
+This is not working yet, but:
+
+::
 
     piano newaddon myaddon
     
@@ -77,4 +90,5 @@ Credits
 
 piano is created and managed by David Bain, it is built on top of plock which was
 created and maintained by Alex Clark.
+
 

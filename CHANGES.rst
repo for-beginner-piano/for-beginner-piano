@@ -1,6 +1,7 @@
 Changelog
 =========
-0.2.4 (2015-02-02)
+
+0.2.10 (2015-02-02)
 ------------------
 
 - made adjustments to README
@@ -17,7 +18,7 @@ Changelog
 - now unpacks unified installer cache to ~/.buildout/
 - creates ~/.buildout/default.cfg file
 - keeps a cache based on settings in default.cfg, 
- cache is, by default ~/.buildout/[eggs|downloads|extends-cache]
+  cache is, by default ~/.buildout/[eggs|downloads|extends-cache]
 
 0.2.1 (2015-02-01)
 ------------------
