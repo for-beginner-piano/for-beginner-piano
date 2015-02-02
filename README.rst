@@ -8,17 +8,16 @@ Piano. Beginner friendly Plone development.
 Installation
 =================
 
-We prefer recommend `pipsi`. 
+We prefer and recommend `pipsi`. 
 (Here are installation instructions https://github.com/mitsuhiko/pipsi#readme.)
 
 Once you have pipsi run::
 
     pipsi install piano
-    
-OR::
+    ~/.local/venvs/piano/bin/pip install -U setuptools
 
-    pip install piano
-
+.. note:: It is important to ensure that the latest version of setuptools is installed
+          for this reason we run the second command above.
 
 Usage
 =============
@@ -28,7 +27,7 @@ To create a new Plone buildout project
 ::
 
     piano newbuildout my-plone-site
-
+    
 .. note: A buildout is a folder which holds all the settings required to build
 and deploy a Plone site
 
@@ -44,10 +43,6 @@ You'll see output similar to this::
     Configuring cache...
     Running Buildout...
 
-Before using Piano be sure to upgrade setuptools
-::
-
-     ~/.local/venvs/piano/bin/pip install -U setuptools
  
 Creating a Plone add-on
 -------------------------
