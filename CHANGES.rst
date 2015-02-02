@@ -35,4 +35,3 @@ Changelog
 ------------------
 
 - Initial release
-
