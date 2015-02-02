@@ -1,5 +1,5 @@
 piano
-=======
+=====
 
 .. image:: https://travis-ci.org/for-beginner-piano/for-beginner-piano.svg?branch=master
 
@@ -25,14 +25,11 @@ It also ensures that piano is using the most up-to-date version of
 setuptools.
 
 Longer Install
----------------
+--------------
 
 We prefer and recommend `pipsi`. 
 
-(Here are installation instructions for pipsi https://github.com/mitsuhiko/pipsi#readme.)
-
-
-Once you have pipsi run:
+Once you have pipsi, run:
 
 ::
 
@@ -75,7 +72,7 @@ You'll see output similar to this:
 
  
 Creating a Plone add-on
-------------------------
+-----------------------
 
 This is not working yet, but:
 
@@ -86,7 +83,7 @@ This is not working yet, but:
 (coming soon, this command doesn't work yet)
 
 Credits
---------
+-------
 
 piano is created and managed by David Bain, it is built on top of plock which was
 created and maintained by Alex Clark.
