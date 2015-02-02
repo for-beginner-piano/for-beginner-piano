@@ -31,6 +31,6 @@ def test_cli_with_arg(runner):
     result = runner.invoke(cli.cli, ['newbuildout', name])
 #    assert result.exit_code == 0
     assert not result.exception
-    expected = result.output.split('\n')[2]
+    expected = result.output.split('\n')[3]
     assert expected == 'Initializing {} buildout environment using Plock'.format(name)
     shutil.rmtree(name)

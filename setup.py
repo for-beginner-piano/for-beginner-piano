@@ -3,11 +3,11 @@ Piano. Beginner friendly Plone development.
 """
 from setuptools import find_packages, setup
 
-dependencies = ['click','plock','requests']
+dependencies = ['click','plock','requests','setuptools>=12.0.5']
 
 setup(
     name='for-beginner-piano',
-    version='0.2.1',
+    version='0.2.2',
     url='https://github.com/for-beginner-piano/for-beginner-piano',
     license='BSD',
     author='David Bain',
