@@ -13,8 +13,8 @@ We prefer and recommend `pipsi`.
 
 Once you have pipsi run::
 
-    pipsi install piano
-    ~/.local/venvs/piano/bin/pip install -U setuptools
+    pipsi install for-beginner-piano
+    ~/.local/venvs/for-beginner-piano/bin/pip install -U setuptools
 
 .. note:: It is important to ensure that the latest version of setuptools is installed
           for this reason we run the second command above.
