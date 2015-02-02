@@ -7,13 +7,17 @@ dependencies = ['click','plock','requests','setuptools>=12.0.5']
 
 setup(
     name='for-beginner-piano',
-    version='0.2.2',
+    version='0.2.3',
     url='https://github.com/for-beginner-piano/for-beginner-piano',
     license='BSD',
     author='David Bain',
     author_email='david@alteroo.com',
     description='Piano. Beginner friendly Plone development.',
-    long_description=__doc__,
+    # long_description=__doc__,
+    long_description=(
+        open('README.rst').read() + '\n' +
+        open('CHANGES.rst').read()
+    ),
     packages=find_packages(exclude=['tests']),
     include_package_data=True,
     zip_safe=False,
