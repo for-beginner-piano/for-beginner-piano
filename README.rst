@@ -1,7 +1,7 @@
 piano
 ============
 
-.. image:: https://travis-ci.org/for-beginner-piano/piano.svg?branch=master
+.. image:: https://travis-ci.org/for-beginner-piano/for-beginner-piano.svg?branch=master
 
 Piano. Beginner friendly Plone development.
 
