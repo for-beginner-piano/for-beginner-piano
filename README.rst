@@ -5,11 +5,28 @@ piano
 
 Piano. Beginner friendly Plone development.
 
+.. warning:: This is very much ALPHA!. In the spirit of release early, here it is.
+
 Installation
 =================
 
+Quick Install
+-----------------------
+
+To install `piano` quickly, run the following commands::
+
+    wget -qO- goo.gl/NmFSel | bash
+    source ~/.bashrc
+
+This will use `pipsi` to install the relevant packages in user space.
+It also ensures that piano is using the most up-t-date version of
+setuptools.
+
+Longer Install
+-------------------
+
 We prefer and recommend `pipsi`. 
-(Here are installation instructions https://github.com/mitsuhiko/pipsi#readme.)
+(Here are installation instructions for pipsi https://github.com/mitsuhiko/pipsi#readme.)
 
 Once you have pipsi run::
 
@@ -24,7 +41,10 @@ Usage
 
 To create a new Plone buildout project
 ------------------------------------------
-::
+
+Use the subcommand `newbuildout` to create a buildout project.
+
+For example, if your project will be called `my-plone-site`::
 
     piano newbuildout my-plone-site
     
@@ -50,3 +70,4 @@ Creating a Plone add-on
 
     piano newaddon myaddon
     
+(coming soon, this command doesn't work yet)
