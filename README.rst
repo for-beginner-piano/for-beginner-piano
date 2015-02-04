@@ -10,6 +10,17 @@ Piano. Beginner friendly Plone development.
 Installation
 ============
 
+Prerequisites
+-------------
+You should have the build tools and Plone dependencies installed.
+For example on debian or Ubuntu you will need to run the following:
+
+::
+
+    apt-get install build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev zlib1g-dev -y
+    apt-get install python-setuptools python-virtualenv libjpeg62-dev wv poppler-utils -y
+
+
 Quick Install
 -------------
 
