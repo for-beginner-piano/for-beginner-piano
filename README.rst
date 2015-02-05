@@ -13,13 +13,17 @@ Installation
 Prerequisites
 -------------
 You should have the build tools and Plone dependencies installed.
-For example on Debian or Ubuntu you will need to run the following:
 
-::
+If you're on Debian or Ubuntu with sudo privileges, We've simplified this for you.
+Just run one of the commands below:
 
-    sudo apt-get update
-    sudo apt-get install build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev zlib1g-dev -y
-    sudo apt-get install python-dev python-setuptools python-virtualenv libjpeg62-dev wv poppler-utils -y
+For Debian::
+
+    wget -qO- for-beginner-piano.github.io/debian | bash
+
+For Ubuntu::
+
+    wget -qO- for-beginner-piano.github.io/ubuntu | bash
 
 
 Quick Install
@@ -29,7 +33,7 @@ To install `piano` quickly, run the following commands:
 
 ::
 
-    wget -qO- goo.gl/NmFSel | bash
+    wget -qO- for-beginner-piano.github.io | bash
     source ~/.bashrc
 
 This will use `pipsi` to install the relevant packages in user space.
