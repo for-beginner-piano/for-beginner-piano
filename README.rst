@@ -55,6 +55,22 @@ Once you have pipsi, run:
 .. note:: It is important to ensure that the latest version of setuptools is installed
           for this reason we run the second command above.
 
+Installing non default versions
+===============================
+Future version of piano will simplify the approach to installing non default
+versions of Plone, for now piano requires that you explicitly set special
+environment variables. 
+
+For example to install Plone 5 you would do the following::
+
+    export PIANO_EXTENDS=https://raw.github.com/plock/pins/master/plone-5-0
+    export PIANO_UNIFIEDINSTALLER_URL=https://launchpad.net/plone/5.0/5.0a2/+download/Plone-5.0a2-UnifiedInstaller.tgz
+    export PIANO_UNIFIEDINSTALLER_DIR=Plone-5.0a2-UnifiedInstaller
+
+then run::
+
+    piano newbuildout myplone5
+    
 Usage
 =====
 

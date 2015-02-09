@@ -1,6 +1,8 @@
 import distutils.core
+from distutils import log
 import errno
 import locale
+import urllib2
 import os
 import requests
 import shutil
@@ -12,6 +14,16 @@ import click
 from click import progressbar
 from plock.install import Installer
 from plock.config import EXTENDS
+from plock.config import UNIFIEDINSTALLER_URL
+from plock.config import UNIFIEDINSTALLER_DIR
+EXTENDS = os.getenv('PIANO_EXTENDS', EXTENDS)
+UNIFIEDINSTALLER_URL = os.getenv('PIANO_UNIFIEDINSTALLER_URL', UNIFIEDINSTALLER_URL)
+UNIFIEDINSTALLER_DIR = os.getenv('PIANO_UNIFIEDINSTALLER_DIR', UNIFIEDINSTALLER_DIR)
+# setting  the following in the shell will now get you an Plone 5 install
+# export PIANO_EXTENDS=https://raw.github.com/plock/pins/master/plone-5-0
+# export PIANO_UNIFIEDINSTALLER_URL=https://launchpad.net/plone/5.0/5.0a2/+download/Plone-5.0a2-UnifiedInstaller.tgz
+# export PIANO_UNIFIEDINSTALLER_DIR=Plone-5.0a2-UnifiedInstaller
+# will install Plone 5
 
 
 def copy(src, dest):
@@ -161,6 +173,45 @@ class PianoInstall(Installer):
 
         # now that the deed is done reset the self.directory
         self.directory = self._directory
+
+    def download(
+        self,
+        package_url=UNIFIEDINSTALLER_URL,
+        packagename=UNIFIEDINSTALLER_DIR,
+        to_dir=os.curdir,
+        unzip=False,
+        unzip_dir=None
+    ):
+        """
+        Download a file from a specific location. `to_dir` is the directory
+        where the egg will be downloaded. Returns the location of the file.
+        """
+        url = UNIFIEDINSTALLER_URL  # package_url
+        packagename = "{}.tgz".format(UNIFIEDINSTALLER_DIR)
+        saveto = os.path.join(to_dir, packagename)
+        src = dst = None
+        if not os.path.exists(saveto):  # Avoid repeated downloads
+            try:
+                log.warn("Downloading installer (%s)", url)
+                src = urllib2.urlopen(url)
+                # Read/write all in one block, so we don't create a corrupt
+                # file if the download is interrupted.
+                # data = _validate_md5(egg_name, src.read())
+                data = src.read()
+                dst = open(saveto, "wb")
+                dst.write(data)
+            finally:
+                if src:
+                    src.close()
+                if dst:
+                    dst.close()
+                    # XXX FIXME
+                    # F821 undefined name 'unzip_package'
+                    # if unzip:
+                    #     unzip_package(packagename, unzip_dir)
+        else:
+            log.warn("Using previous download of %s", packagename)
+        return os.path.realpath(saveto)
 
     def install_plone(self, args, test=False):
         """

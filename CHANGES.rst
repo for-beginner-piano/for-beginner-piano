@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.3.0 (2015-02-08)
+------------------
+
+- added support for installation of alternative plone versions by setting
+  special env variables
+
 0.2.16 (2015-02-04)
 -------------------
 
