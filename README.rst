@@ -55,21 +55,6 @@ Once you have pipsi, run:
 .. note:: It is important to ensure that the latest version of setuptools is installed
           for this reason we run the second command above.
 
-Installing non default versions
-===============================
-Future version of piano will simplify the approach to installing non default
-versions of Plone, for now piano requires that you explicitly set special
-environment variables. 
-
-For example to install Plone 5 you would do the following::
-
-    export PIANO_EXTENDS=https://raw.github.com/plock/pins/master/plone-5-0
-    export PIANO_UNIFIEDINSTALLER_URL=https://launchpad.net/plone/5.0/5.0a2/+download/Plone-5.0a2-UnifiedInstaller.tgz
-    export PIANO_UNIFIEDINSTALLER_DIR=Plone-5.0a2-UnifiedInstaller
-
-then run::
-
-    piano newbuildout myplone5
     
 Usage
 =====
@@ -102,7 +87,30 @@ You'll see output similar to this:
     Configuring cache...
     Running Buildout...
 
- 
+Installing non default versions
+-------------------------------
+
+For the latest Plone 5 site you could do the following::
+
+    wget for-beginner-piano.github.com/p5; source p5
+    piano newbuildout plone5-site
+    
+for the latest Plone 4 site::
+
+    wget for-beginner-piano.github.com/p4; source p4
+    piano newbuildout plone4-site
+
+OR if you prefer the more manual approach, here's an example of installing 
+Plone 5 (note the use of the special PIANO_ environment variables::
+
+    export PIANO_EXTENDS=https://raw.github.com/plock/pins/master/plone-5-0
+    export PIANO_UNIFIEDINSTALLER_URL=https://launchpad.net/plone/5.0/5.0a2/+download/Plone-5.0a2-UnifiedInstaller.tgz
+    export PIANO_UNIFIEDINSTALLER_DIR=Plone-5.0a2-UnifiedInstaller
+
+then run::
+
+    piano newbuildout myplone5
+
 Creating a Plone add-on
 -----------------------
 

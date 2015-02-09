@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.3.1 (2015-02-08)
+------------------
+
+- fixed a bug where alternative plone installs were not cleaning up after 
+  themeselves properly
+  
 0.3.0 (2015-02-08)
 ------------------
 

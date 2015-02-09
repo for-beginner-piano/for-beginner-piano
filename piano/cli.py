@@ -131,16 +131,27 @@ extends-cache = {0}/extends-cache"""
 
 
 class PianoInstall(Installer):
+    def clean_up(self, test=False):
+        if test:
+            return
+        # override self.directory
+        home = os.getenv("HOME")
+        # temporarily override self.directory
+        self.directory = "{}/.buildout".format(home)
+        shutil.rmtree("%s/%s" % (self.directory, UNIFIEDINSTALLER_DIR))
+        shutil.rmtree("%s/buildout-cache" % self.directory)
+        # now that the deed is done reset the self.directory
+        self.directory = self._directory
+
     def create_cache(self, test=False):
         """
         Create cache directories for eggs and downloads
         """
+        if test:
+            return
         # override self.directory
         home = os.getenv("HOME")
         self.cachepath = "{}/.buildout".format(home)
-
-        if test:
-            return
         # temporarily override self.directory
         self._directory = self.directory
         self.directory = "{}/.buildout".format(home)
@@ -210,7 +221,7 @@ class PianoInstall(Installer):
                     # if unzip:
                     #     unzip_package(packagename, unzip_dir)
         else:
-            log.warn("Using previous download of %s", packagename)
+            log.warn("Using previous download of %s", url)
         return os.path.realpath(saveto)
 
     def install_plone(self, args, test=False):
