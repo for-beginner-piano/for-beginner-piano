@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.3.2 (unrelased)
+------------------
+
+- Added an alias for 'newbuildout', you can now start a buildout with the
+'piano compose mysite' syntax. Updated the README accordingly
+
 0.3.1 (2015-02-08)
 ------------------
 

@@ -7,7 +7,7 @@ dependencies = ['click','plock','requests','setuptools>=12.0.5']
 
 setup(
     name='for-beginner-piano',
-    version='0.3.1',
+    version='0.3.2',
     url='https://github.com/for-beginner-piano/for-beginner-piano',
     license='BSD',
     author='David Bain',

@@ -10,6 +10,19 @@ def runner():
     return CliRunner()
 
 
+def initcommand(runner, command, arg):
+    os.putenv("piano_test_mode", "1")
+    name = arg
+    if os.path.exists(name):
+        shutil.rmtree(name)
+    result = runner.invoke(cli.cli, [command, name])
+#    assert result.exit_code == 0
+    assert not result.exception
+    expected = result.output.split('\n')[3]
+    assert expected == 'Initializing {} buildout environment using Plock'.format(name)
+    shutil.rmtree(name)
+
+
 def test_cli(runner):
     result = runner.invoke(cli.cli)
     assert result.exit_code == 0
@@ -25,12 +38,9 @@ Commands:
 '''
 
 
-def test_cli_with_arg(runner):
-    os.putenv("piano_test_mode", "1")
-    name = 'plone-site'
-    result = runner.invoke(cli.cli, ['newbuildout', name])
-#    assert result.exit_code == 0
-    assert not result.exception
-    expected = result.output.split('\n')[3]
-    assert expected == 'Initializing {} buildout environment using Plock'.format(name)
-    shutil.rmtree(name)
+def test_cli_newbuildout(runner):
+    initcommand(runner, "newbuildout", "plone-site")
+
+
+def test_cli_init(runner):
+    initcommand(runner, "init", "plone-site")

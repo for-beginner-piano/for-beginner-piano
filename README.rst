@@ -62,13 +62,13 @@ Usage
 To create a new Plone buildout project
 --------------------------------------
 
-Use the subcommand `newbuildout` to create a buildout project.
+Use the subcommand `compose` to create a buildout project.
 
 For example, if your project will be called `my-plone-site`:
 
 ::
 
-    piano newbuildout my-plone-site
+    piano compose my-plone-site
     
 .. note:: A buildout is a folder which holds all the settings required to build
           and deploy a Plone site
@@ -93,12 +93,12 @@ Installing non default versions
 For the latest Plone 5 site you could do the following::
 
     wget for-beginner-piano.github.com/p5; source p5
-    piano newbuildout plone5-site
+    piano compose plone5-site
     
 for the latest Plone 4 site::
 
     wget for-beginner-piano.github.com/p4; source p4
-    piano newbuildout plone4-site
+    piano compose plone4-site
 
 OR if you prefer the more manual approach, here's an example of installing 
 Plone 5 (note the use of the special PIANO_ environment variables::
@@ -109,7 +109,7 @@ Plone 5 (note the use of the special PIANO_ environment variables::
 
 then run::
 
-    piano newbuildout myplone5
+    piano compose myplone5
 
 Creating a Plone add-on
 -----------------------

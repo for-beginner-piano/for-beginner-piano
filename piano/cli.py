@@ -294,6 +294,20 @@ def cli(name):
 
 @cli.command()
 @click.argument('name')
+def compose(name):
+    """ compose is a nickname for newbuildout """
+    newbuildout(name)
+
+
+@cli.command()
+@click.argument('name')
+def init(name):
+    """ init is a nickname for newbuildout """
+    newbuildout(name)
+
+
+@cli.command()
+@click.argument('name')
 def newbuildout(name):
     """initialize a plone site buildout development environment"""
     settings = Settings(
